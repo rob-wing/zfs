@@ -5908,6 +5908,8 @@ vdev_prop_get(vdev_t *vd, nvlist_t *innvl, nvlist_t *outnvl)
 				    vd->vdev_removing, ZPROP_SRC_NONE);
 				continue;
 			/* Numeric Properites */
+			case VDEV_PROP_CHECKSUM_ERRORS_N:
+			case VDEV_PROP_CHECKSUM_ERRORS_T:
 			case VDEV_PROP_ALLOCATING:
 				src = ZPROP_SRC_LOCAL;
 				strval = NULL;

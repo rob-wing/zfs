@@ -410,6 +410,12 @@ vdev_prop_init(void)
 	    sfeatures);
 
 	/* default numeric properties */
+	zprop_register_number(VDEV_PROP_CHECKSUM_ERRORS_N, "checksum_n", 10,
+	    PROP_DEFAULT, ZFS_TYPE_VDEV, "<count>", "CHECKSUMN", B_FALSE,
+	    sfeatures);
+	zprop_register_number(VDEV_PROP_CHECKSUM_ERRORS_T, "checksum_t", 10,
+	    PROP_DEFAULT, ZFS_TYPE_VDEV, "<seconds>", "CHECKSUMT", B_FALSE,
+	    sfeatures);
 
 	/* default index (boolean) properties */
 	zprop_register_index(VDEV_PROP_REMOVING, "removing", 0,
