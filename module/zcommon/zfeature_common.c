@@ -731,6 +731,12 @@ zpool_feature_init(void)
 	    ZFEATURE_FLAG_READONLY_COMPAT, ZFEATURE_TYPE_BOOLEAN, NULL,
 	    sfeatures);
 
+	zfeature_register(SPA_FEATURE_AVZ_V2,
+	    "com.klarasystems:avz_v2", "avz_v2",
+	    "Support for root vdev ZAP.",
+	    ZFEATURE_FLAG_MOS, ZFEATURE_TYPE_BOOLEAN, NULL,
+	    sfeatures);
+
 	zfs_mod_list_supported_free(sfeatures);
 }
 
