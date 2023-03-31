@@ -861,16 +861,19 @@ by user and group.
 .feature com.klarasystems vdev_zaps_v2 no
 This feature creates a ZAP object for the root vdev.
 .Pp
-This feature becomes active after next
+This feature becomes active after next the
 .Nm zpool Cm import
 or
 .Nm zpool reguid .
 .
-Properties can be set on the root vdev using
+Properties can be retrieved or set on the root vdev using
+.Nm zpool Cm get
+and
 .Nm zpool Cm set
 with
-.Sy root-0
-as the vdev name.
+.Sy root
+as the vdev name which is an alias for
+.Sy root-0 .
 .feature org.openzfs zilsaxattr yes extensible_dataset
 This feature enables
 .Sy xattr Ns = Ns Sy sa

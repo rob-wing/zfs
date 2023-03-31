@@ -30,7 +30,7 @@
 #
 # DESCRIPTION:
 #
-# zpool get <pool> root-0 works as expected
+# zpool get <pool> root works as expected
 #
 # STRATEGY:
 #
@@ -40,7 +40,7 @@
 
 log_assert "zpool get all on root vdev"
 
-EXPECT="$(zpool get -H all ${TESTPOOL} root-0 | wc -l)"
+EXPECT="$(zpool get -H all ${TESTPOOL} root | wc -l)"
 if [ $? -ne 0 ]; then
     log_fail "cannot retrieve properties from root vdev"
 fi
@@ -48,7 +48,7 @@ fi
 i=0;
 while [ $i -lt "${#properties[@]}" ]
 do
-	log_must zpool get -H "${properties[$i]}" "$TESTPOOL" root-0
+	log_must zpool get -H "${properties[$i]}" "$TESTPOOL" root
 	i=$(($i+1))
 done
 

@@ -38,9 +38,9 @@
 
 log_assert "zpool set comment property on root vdev"
 
-log_must zpool set comment="openzfs" ${TESTPOOL} root-0
+log_must zpool set comment="openzfs" ${TESTPOOL} root
 
-COMMENT="$(zpool get -H -o value comment ${TESTPOOL} root-0)"
+COMMENT="$(zpool get -H -o value comment ${TESTPOOL} root)"
 if [ $? -ne 0 ]; then
     log_fail "cant retrieve comment property from root vdev"
 fi
